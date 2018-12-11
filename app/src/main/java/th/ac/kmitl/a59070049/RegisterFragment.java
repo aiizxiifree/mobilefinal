@@ -62,13 +62,14 @@ public class RegisterFragment extends Fragment {
         SQLiteDatabase db = getActivity().openOrCreateDatabase("my.db", Context.MODE_PRIVATE, null);
 
         db.execSQL("CREATE TABLE IF NOT EXISTS UserAccont (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                " uid VARCHAR(200), name VARCHAR(200), age VARCHAR(200), password VARCHAR(200))");
+                " uid VARCHAR(200), name VARCHAR(200), age VARCHAR(200), password VARCHAR(200)");
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("uid", useridEdittext.getText().toString());
         contentValues.put("name", nameEdittext.getText().toString());
         contentValues.put("age", ageEdittext.getText().toString());
         contentValues.put("password", passswordEdittext.getText().toString());
+        contentValues.put("quote", "today is my day");
         db.insert("UserAccont", null, contentValues);
         db.close();
         Log.d("ASD", "finish");

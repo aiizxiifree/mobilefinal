@@ -79,7 +79,7 @@ public class LoginFragment extends Fragment {
         SQLiteDatabase db = getActivity().openOrCreateDatabase("my.db", Context.MODE_PRIVATE, null);
 
         db.execSQL("CREATE TABLE IF NOT EXISTS UserAccont (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                " uid VARCHAR(200), name VARCHAR(200), age VARCHAR(200), password VARCHAR(200))");
+                " uid VARCHAR(200), name VARCHAR(200), age VARCHAR(200), password VARCHAR(200), quote VARCHAR(200))");
 
 
         final Cursor myCursor = db.rawQuery("select _id, name, age from UserAccont where uid = "+ "'" + userIdEdittext.getText().toString()+ "' and password = "+ "'" +
@@ -99,6 +99,7 @@ public class LoginFragment extends Fragment {
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharePreference", Context.MODE_PRIVATE);
             sharedPreferences.edit().putString("userID", userIdEdittext.getText().toString()).apply();
             sharedPreferences.edit().putString("password", passwordEdittext.getText().toString()).apply();
+
             return false;
         }
     }

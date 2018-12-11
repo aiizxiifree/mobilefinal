@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class HomeFragment extends Fragment {
@@ -25,13 +26,39 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         text();
+        signOut();
+        profile();
+    }
+    public void profile(){
+        
     }
 
     public void text(){
         sharedPreferences = getActivity().getSharedPreferences("sharePreference", Context.MODE_PRIVATE);
         String userIdString = sharedPreferences.getString("userID", "not found");
         String passwordString = sharedPreferences.getString("password", "not found");
+        String quoteString = sharedPreferences.getString("quote", "not found");
         TextView textView = getView().findViewById(R.id.home_text);
-        textView.setText("Hello " + userIdString + " " + passwordString + "this is my quote" + "\"today is my day\"");
+        textView.setText("Hello " + userIdString + " " + passwordString + "this is my quote" + "\""+ "today is my day" + "\"");
     }
+
+    public void signOut(){
+        Button signOutButton = getView().findViewById(R.id.home_sign_out);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPreferences.edit().clear().apply();
+//                sharedPreferences.edit().remove("userID");
+//                sharedPreferences.edit().remove("password");
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new LoginFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+    }
+
+
 }
