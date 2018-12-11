@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/home_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/home_profile_setup"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text="PROFILE SETUP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_text" />
+
+    <Button
+        android:id="@+id/home_my_friend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="MY FRIEND"
+        app:layout_constraintEnd_toEndOf="@+id/home_profile_setup"
+        app:layout_constraintStart_toStartOf="@+id/home_profile_setup"
+        app:layout_constraintTop_toBottomOf="@+id/home_profile_setup" />
+
+    <Button
+        android:id="@+id/home_sign_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="SIGN OUT"
+        app:layout_constraintEnd_toEndOf="@+id/home_my_friend"
+        app:layout_constraintStart_toStartOf="@+id/home_my_friend"
+        app:layout_constraintTop_toBottomOf="@+id/home_my_friend" />
+</android.support.constraint.ConstraintLayout>
