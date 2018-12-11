@@ -28,9 +28,36 @@ public class HomeFragment extends Fragment {
         text();
         signOut();
         profile();
+        friend();
+
+
+    }
+
+    public void friend(){
+        Button friendBtn = getView().findViewById(R.id.home_my_friend);
+        friendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new FriendFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
     public void profile(){
-        
+        Button profileBtn = getView().findViewById(R.id.home_profile_setup);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_view, new ProfileFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     public void text(){

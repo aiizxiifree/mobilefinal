@@ -51,27 +51,33 @@
         android:id="@+id/profile_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="256dp" />
+        app:layout_constraintEnd_toEndOf="@+id/profile_age"
+        app:layout_constraintStart_toStartOf="@+id/profile_age"
+        app:layout_constraintTop_toBottomOf="@+id/profile_age" />
 
     <EditText
         android:id="@+id/profile_quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="321dp" />
+        app:layout_constraintEnd_toEndOf="@+id/profile_password"
+        app:layout_constraintStart_toStartOf="@+id/profile_password"
+        app:layout_constraintTop_toBottomOf="@+id/profile_password" />
 
     <Button
         android:id="@+id/profile_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="417dp" />
+        app:layout_constraintEnd_toEndOf="@+id/profile_quote"
+        app:layout_constraintStart_toStartOf="@+id/profile_quote"
+        app:layout_constraintTop_toBottomOf="@+id/profile_quote" />
 </android.support.constraint.ConstraintLayout>
